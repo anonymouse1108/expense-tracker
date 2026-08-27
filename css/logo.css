@@ -1,0 +1,308 @@
+/* =========================
+   EXPENSE TRACKER LOGO
+========================= */
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    text-decoration: none;
+    color: var(--text);
+}
+
+/* =========================
+   LOGO ICON
+========================= */
+
+.brand-logo-icon {
+    position: relative;
+    width: 58px;
+    height: 58px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 3px solid #0f2747;
+    border-radius: 16px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8fcff,
+            #dbeafe
+        );
+
+    box-shadow:
+        0 7px 0 #0f2747,
+        0 12px 24px rgba(15, 39, 71, 0.18);
+
+    transform: perspective(500px) rotateX(3deg);
+}
+
+/* =========================
+   COINS
+========================= */
+
+.logo-coins {
+    position: absolute;
+    left: 7px;
+    bottom: 8px;
+
+    width: 22px;
+    height: 9px;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #ffe58a,
+            #f5b800
+        );
+
+    border: 1px solid #c88d00;
+
+    box-shadow:
+        0 -5px 0 #ffd95a,
+        0 -10px 0 #f6c62e,
+        0 3px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* =========================
+   GRAPH BARS
+========================= */
+
+.logo-bars {
+    position: absolute;
+    left: 28px;
+    bottom: 9px;
+
+    display: flex;
+    align-items: end;
+    gap: 3px;
+
+    height: 25px;
+}
+
+.logo-bars span {
+    display: block;
+    width: 5px;
+
+    border-radius: 2px 2px 0 0;
+
+    background:
+        linear-gradient(
+            180deg,
+            #38bdf8,
+            #2563eb
+        );
+
+    box-shadow:
+        1px 1px 3px rgba(37, 99, 235, 0.3);
+}
+
+.logo-bars span:nth-child(1) {
+    height: 8px;
+}
+
+.logo-bars span:nth-child(2) {
+    height: 14px;
+}
+
+.logo-bars span:nth-child(3) {
+    height: 20px;
+}
+
+/* =========================
+   GROWTH ARROW
+========================= */
+
+.logo-growth {
+    position: absolute;
+
+    width: 26px;
+    height: 26px;
+
+    top: 9px;
+    right: 7px;
+
+    border-top: 5px solid #10b981;
+    border-right: 5px solid #10b981;
+
+    transform:
+        rotate(-45deg)
+        skew(-8deg, -8deg);
+
+    filter:
+        drop-shadow(
+            1px 2px 2px rgba(16, 185, 129, 0.3)
+        );
+}
+
+/* Arrow tail */
+
+.logo-growth::before {
+    content: "";
+
+    position: absolute;
+
+    width: 25px;
+    height: 5px;
+
+    top: 11px;
+    left: -5px;
+
+    border-radius: 5px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #14b8a6,
+            #10b981
+        );
+
+    transform: rotate(45deg);
+}
+
+/* =========================
+   CALCULATOR
+========================= */
+
+.logo-calculator {
+    position: absolute;
+
+    right: 6px;
+    bottom: 6px;
+
+    width: 17px;
+    height: 21px;
+
+    border-radius: 4px;
+
+    border: 2px solid #0f2747;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff,
+            #cbd5e1
+        );
+
+    box-shadow:
+        2px 3px 3px rgba(15, 39, 71, 0.2);
+}
+
+/* Calculator screen */
+
+.logo-calculator::before {
+    content: "";
+
+    position: absolute;
+
+    top: 3px;
+    left: 3px;
+
+    width: 7px;
+    height: 4px;
+
+    border-radius: 1px;
+
+    background: #22d3ee;
+}
+
+/* Calculator buttons */
+
+.logo-calculator::after {
+    content: "••••";
+
+    position: absolute;
+
+    left: 3px;
+    bottom: 1px;
+
+    width: 9px;
+
+    color: #2563eb;
+
+    font-size: 5px;
+    line-height: 5px;
+
+    letter-spacing: 1px;
+}
+
+/* =========================
+   LOGO TEXT
+========================= */
+
+.brand-logo-text {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.brand-logo-title {
+    color: #0f2747;
+
+    font-size: 1.15rem;
+    font-weight: 800;
+
+    letter-spacing: -0.03em;
+}
+
+.brand-logo-subtitle {
+    color: #64748b;
+
+    font-size: 0.68rem;
+    font-weight: 600;
+
+    letter-spacing: 0.01em;
+}
+
+/* =========================
+   DARK MODE
+========================= */
+
+body.dark-theme .brand-logo-title {
+    color: #f1f5f9;
+}
+
+body.dark-theme .brand-logo-subtitle {
+    color: #94a3b8;
+}
+
+body.dark-theme .brand-logo-icon {
+    border-color: #94a3b8;
+
+    background:
+        linear-gradient(
+            145deg,
+            #1e293b,
+            #0f172a
+        );
+
+    box-shadow:
+        0 7px 0 #020617,
+        0 12px 24px rgba(0, 0, 0, 0.35);
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 600px) {
+
+    .brand-logo-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand-logo-title {
+        font-size: 1rem;
+    }
+
+    .brand-logo-subtitle {
+        font-size: 0.6rem;
+    }
+}

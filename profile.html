@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Profile - Expense Tracker</title>
+   <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/profile.css">
+<link rel="stylesheet" href="css/logo.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+
+        <div class="header-container">
+
+<a href="index.html" class="brand-logo">
+
+    <div class="brand-logo-icon">
+
+        <div class="logo-coins"></div>
+
+        <div class="logo-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo-growth"></div>
+
+        <div class="logo-calculator"></div>
+
+    </div>
+
+    <div class="brand-logo-text">
+
+        <span class="brand-logo-title">
+            Expense Tracker
+        </span>
+
+        <span class="brand-logo-subtitle">
+            Manage Your Finances with Ease
+        </span>
+
+    </div>
+
+</a>
+
+            <a href="index.html" class="profile-back-button">
+                ← Dashboard
+            </a>
+
+        </div>
+
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="profile-page">
+
+        <section class="profile-card">
+
+            <!-- PROFILE HEADER -->
+
+            <div class="profile-page-header">
+
+                <div class="profile-page-avatar-wrapper">
+
+    <div
+        class="profile-page-avatar"
+        id="profilePageAvatar">
+        U
+    </div>
+
+<div class="profile-image-actions">
+
+    <label
+        for="profileImageInput"
+        class="profile-image-upload"
+        title="Change profile picture">
+        📷
+    </label>
+
+    <button
+        type="button"
+        id="removeProfileImage"
+        class="profile-image-remove"
+        title="Remove profile picture">
+        🗑️
+    </button>
+
+</div>
+    <input
+        type="file"
+        id="profileImageInput"
+        accept="image/*"
+        hidden>
+
+</div>
+
+                <div>
+
+                    <p class="page-label">
+                        ACCOUNT
+                    </p>
+
+                    <h1>My Profile</h1>
+
+                    <p>
+                        Manage your personal account information.
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- PROFILE INFORMATION -->
+
+            <div class="profile-information">
+
+                <div class="profile-information-item">
+
+                    <span class="profile-information-label">
+                        Full Name
+                    </span>
+
+                    <strong id="profilePageName">
+                        User
+                    </strong>
+
+                </div>
+
+                <div class="profile-information-item">
+
+                    <span class="profile-information-label">
+                        Email
+                    </span>
+
+                    <strong id="profilePageEmail">
+                        user@example.com
+                    </strong>
+
+                </div>
+
+                <div class="profile-information-item">
+
+                    <span class="profile-information-label">
+                        Account
+                    </span>
+
+                    <strong>
+                        Personal Finance
+                    </strong>
+
+                </div>
+
+            </div>
+
+            <!-- ACTIONS -->
+
+            <div class="profile-page-actions">
+
+                <button
+                    type="button"
+                    class="save-button"
+                    id="editProfileButton">
+                    ✏️ Edit Profile
+                </button>
+
+                <button
+                    type="button"
+                    class="save-button"
+                    id="changePasswordButton">
+                    🔐 Change Password
+                </button>
+
+                <button
+                    type="button"
+                    class="delete-cancel-button"
+                    id="profileLogoutButton">
+                    🚪 Logout
+                </button>
+
+            </div>
+
+            <!-- EDIT PROFILE MODAL -->
+
+            <div
+                class="modal-overlay"
+                id="editProfileModal"
+                aria-hidden="true">
+
+                <div class="transaction-modal">
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <p class="modal-label">
+                                ACCOUNT
+                            </p>
+
+                            <h2>Edit Profile</h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            id="closeEditProfileModal"
+                            aria-label="Close edit profile">
+                            ×
+                        </button>
+
+                    </div>
+
+                    <form id="editProfileForm">
+
+                        <div class="form-group">
+
+                            <label for="editProfileName">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="editProfileName"
+                                maxlength="50"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="editProfileEmail">
+                                Email
+                            </label>
+
+                            <input
+                                type="email"
+                                id="editProfileEmail"
+                                required>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="cancel-button"
+                                id="cancelEditProfile">
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="save-button">
+                                Save Changes
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+            <!-- CHANGE PASSWORD MODAL -->
+
+            <div
+                class="modal-overlay"
+                id="changePasswordModal"
+                aria-hidden="true">
+
+                <div class="transaction-modal">
+
+                    <div class="modal-header">
+
+                        <div>
+
+                            <p class="modal-label">
+                                SECURITY
+                            </p>
+
+                            <h2>Change Password</h2>
+
+                        </div>
+
+                        <button
+                            type="button"
+                            class="modal-close"
+                            id="closeChangePasswordModal"
+                            aria-label="Close change password">
+                            ×
+                        </button>
+
+                    </div>
+
+                    <form id="changePasswordForm">
+
+                        <div class="form-group">
+
+                            <label for="currentPassword">
+                                Current Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="currentPassword"
+                                autocomplete="current-password"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="newPassword">
+                                New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="newPassword"
+                                minlength="6"
+                                autocomplete="new-password"
+                                required>
+
+                        </div>
+
+                        <div class="form-group">
+
+                            <label for="confirmPassword">
+                                Confirm New Password
+                            </label>
+
+                            <input
+                                type="password"
+                                id="confirmPassword"
+                                minlength="6"
+                                autocomplete="new-password"
+                                required>
+
+                        </div>
+
+                        <div class="form-actions">
+
+                            <button
+                                type="button"
+                                class="cancel-button"
+                                id="cancelChangePassword">
+                                Cancel
+                            </button>
+
+                            <button
+                                type="submit"
+                                class="save-button">
+                                🔐 Update Password
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/auth.js"></script>
+    <script src="js/profile-page.js"></script>
+
+</body>
+
+</html>

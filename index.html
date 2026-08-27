@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expense Tracker</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/logo.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="header">
+        <div class="header-container">
+
+            <a href="index.html" class="brand-logo">
+
+    <div class="brand-logo-icon">
+
+        <div class="logo-coins"></div>
+
+        <div class="logo-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo-growth"></div>
+
+        <div class="logo-calculator"></div>
+
+    </div>
+
+    <div class="brand-logo-text">
+
+        <span class="brand-logo-title">
+            Expense Tracker
+        </span>
+
+        <span class="brand-logo-subtitle">
+            Manage Your Finances with Ease
+        </span>
+
+    </div>
+
+</a>
+
+            <div class="header-actions">
+
+                <button
+                    type="button"
+                    class="icon-button"
+                    id="themeButton"
+                    title="Toggle Dark Mode"
+                    aria-label="Toggle Dark Mode">
+                    🌙
+                </button>
+
+                <!-- PROFILE -->
+
+                <div class="profile-wrapper">
+
+                    <button
+                        type="button"
+                        class="profile"
+                        id="profileButton"
+                        title="Open Profile"
+                        aria-expanded="false">
+
+                        <div class="profile-avatar" id="profileAvatar">
+                            G
+                        </div>
+
+                        <span class="profile-name" id="profileName">
+                            Guest
+                        </span>
+
+                    </button>
+
+                    <!-- PROFILE DROPDOWN -->
+
+                    <div
+                        class="profile-dropdown"
+                        id="profileDropdown"
+                        aria-hidden="true">
+
+                        <div class="profile-dropdown-header">
+
+                            <div
+                                class="profile-dropdown-avatar"
+                                id="dropdownAvatar">
+                                G
+                            </div>
+
+                            <div class="profile-dropdown-user">
+
+                                <strong id="dropdownName">
+                                    Guest
+                                </strong>
+
+                                <span id="dropdownEmail">
+                                    Not logged in
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="profile-dropdown-divider"></div>
+
+                        <button
+                            type="button"
+                            class="profile-menu-button"
+                            id="profileDetailsButton">
+
+                            <span class="profile-menu-icon">👤</span>
+                            <span>My Profile</span>
+
+                        </button>
+
+                        <button
+                            type="button"
+                            class="profile-menu-button logout-button"
+                            id="logoutButton">
+
+                            <span class="profile-menu-icon">🚪</span>
+                            <span>Logout</span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </header>
+
+    <!-- MAIN -->
+
+    <main class="main-container">
+
+        <!-- WELCOME -->
+
+        <section class="welcome-section">
+
+            <div>
+                <p class="page-label">FINANCIAL OVERVIEW</p>
+
+                <h1>Dashboard</h1>
+
+                <p class="welcome-text">
+                    Track your income, expenses and financial progress.
+                </p>
+            </div>
+
+            <button
+                type="button"
+                class="add-button"
+                id="addTransactionButton">
+
+                <span>+</span>
+                Add Transaction
+
+            </button>
+
+        </section>
+
+        <!-- SUMMARY -->
+
+        <section class="summary-grid">
+
+            <div class="summary-card balance-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <p class="card-title">Total Balance</p>
+                        <h2 id="totalBalance">₹0.00</h2>
+                    </div>
+
+                    <div class="card-icon">💰</div>
+
+                </div>
+
+                <p class="card-description">
+                    Your current available balance
+                </p>
+
+            </div>
+
+            <div class="summary-card income-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <p class="card-title">Total Income</p>
+                        <h2 id="totalIncome">₹0.00</h2>
+                    </div>
+
+                    <div class="card-icon">📈</div>
+
+                </div>
+
+                <p class="card-description">
+                    Total money received
+                </p>
+
+            </div>
+
+            <div class="summary-card expense-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <p class="card-title">Total Expense</p>
+                        <h2 id="totalExpense">₹0.00</h2>
+                    </div>
+
+                    <div class="card-icon">📉</div>
+
+                </div>
+
+                <p class="card-description">
+                    Total money spent
+                </p>
+
+            </div>
+
+            <div class="summary-card transaction-card">
+
+                <div class="card-top">
+
+                    <div>
+                        <p class="card-title">Transactions</p>
+                        <h2 id="totalTransactions">0</h2>
+                    </div>
+
+                    <div class="card-icon">🧾</div>
+
+                </div>
+
+                <p class="card-description">
+                    Total recorded transactions
+                </p>
+
+            </div>
+
+        </section>
+
+        <!-- MONTH FILTER -->
+
+        <section class="toolbar-row">
+
+            <div class="filter-group">
+
+                <label for="monthFilter">
+                    Filter by month
+                </label>
+
+                <select id="monthFilter">
+                    <option value="all">All Months</option>
+                </select>
+
+            </div>
+
+        </section>
+
+        <!-- MONTHLY CHART -->
+
+        <section class="analytics-section">
+
+            <div class="section-header">
+                <h3>Monthly Overview</h3>
+            </div>
+
+            <div
+                id="chartBars"
+                class="chart-bars">
+            </div>
+
+        </section>
+
+        <!-- TRANSACTIONS -->
+
+        <section class="transactions-section">
+
+            <div class="section-header">
+
+                <div>
+                    <h3>Transactions</h3>
+                    <p>Recent financial activity</p>
+                </div>
+
+            </div>
+
+            <!-- TRANSACTION TABS -->
+
+            <div class="transaction-tabs">
+
+                <button
+                    type="button"
+                    class="transaction-tab active"
+                    data-type="all">
+                    All
+                </button>
+
+                <button
+                    type="button"
+                    class="transaction-tab"
+                    data-type="income">
+                    🟢 Income
+                </button>
+
+                <button
+                    type="button"
+                    class="transaction-tab"
+                    data-type="expense">
+                    🔴 Expense
+                </button>
+
+            </div>
+
+            <!-- TRANSACTION LIST -->
+
+            <div
+                id="transactionsList"
+                class="transactions-list">
+            </div>
+
+            <!-- EMPTY STATE -->
+
+            <div
+                id="emptyState"
+                class="empty-state">
+
+                <div class="empty-icon">📊</div>
+
+                <h2>No transactions found</h2>
+
+                <p>
+                    Add a transaction to start tracking your finances.
+                </p>
+
+            </div>
+
+            <!-- PAGINATION -->
+
+            <div
+                class="pagination"
+                id="transactionPagination">
+
+                <button
+                    type="button"
+                    class="pagination-button"
+                    id="previousPageButton"
+                    disabled>
+                    ← Previous
+                </button>
+
+                <span
+                    class="pagination-info"
+                    id="paginationInfo">
+                    Page 1 of 1
+                </span>
+
+                <button
+                    type="button"
+                    class="pagination-button"
+                    id="nextPageButton"
+                    disabled>
+                    Next →
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- ADD / EDIT TRANSACTION MODAL -->
+
+    <div
+        class="modal-overlay"
+        id="transactionModal"
+        aria-hidden="true">
+
+        <div class="transaction-modal">
+
+            <div class="modal-header">
+
+                <div>
+                    <p class="modal-label">TRANSACTION</p>
+
+                    <h2 id="transactionModalTitle">
+                        Add New Transaction
+                    </h2>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="closeTransactionModal"
+                    aria-label="Close transaction form">
+                    ×
+                </button>
+
+            </div>
+
+            <form id="transactionForm">
+
+                <!-- TYPE -->
+
+                <div class="form-group">
+
+                    <label>
+                        Transaction Type
+                    </label>
+
+                    <div class="type-options">
+
+                        <label class="type-option">
+
+                            <input
+                                type="radio"
+                                name="transactionType"
+                                value="income"
+                                checked>
+
+                            <span>🟢 Income</span>
+
+                        </label>
+
+                        <label class="type-option">
+
+                            <input
+                                type="radio"
+                                name="transactionType"
+                                value="expense">
+
+                            <span>🔴 Expense</span>
+
+                        </label>
+
+                    </div>
+
+                </div>
+
+                <!-- TITLE -->
+
+                <div class="form-group">
+
+                    <label for="transactionTitle">
+                        Title
+                    </label>
+
+                    <input
+                        type="text"
+                        id="transactionTitle"
+                        name="title"
+                        placeholder="e.g. Monthly Salary"
+                        autocomplete="off"
+                        maxlength="100"
+                        required>
+
+                </div>
+
+                <!-- AMOUNT -->
+
+                <div class="form-group">
+
+                    <label for="transactionAmount">
+                        Amount
+                    </label>
+
+                    <div class="amount-input">
+
+                        <span>₹</span>
+
+                        <input
+                            type="number"
+                            id="transactionAmount"
+                            name="amount"
+                            placeholder="0.00"
+                            min="0.01"
+                            step="0.01"
+                            required>
+
+                    </div>
+
+                </div>
+
+                <!-- CATEGORY -->
+
+                <div class="form-group">
+
+                    <label for="transactionCategory">
+                        Category
+                    </label>
+
+                    <select
+                        id="transactionCategory"
+                        name="category"
+                        required>
+
+                        <option value="">
+                            Select Category
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <!-- DATE -->
+
+                <div class="form-group">
+
+                    <label for="transactionDate">
+                        Date
+                    </label>
+
+                    <input
+                        type="date"
+                        id="transactionDate"
+                        name="date"
+                        required>
+
+                </div>
+
+                <!-- NOTES -->
+
+                <div class="form-group">
+
+                    <label for="transactionNotes">
+                        Notes <span>(Optional)</span>
+                    </label>
+
+                    <textarea
+                        id="transactionNotes"
+                        name="notes"
+                        rows="3"
+                        maxlength="500"
+                        placeholder="Add a note about this transaction..."></textarea>
+
+                </div>
+
+                <!-- FORM ACTIONS -->
+
+                <div class="form-actions">
+
+                    <button
+                        type="button"
+                        class="cancel-button"
+                        id="cancelTransaction">
+                        Cancel
+                    </button>
+
+                    <button
+                        type="submit"
+                        class="save-button"
+                        id="submitTransactionButton">
+
+                        <span>+</span>
+                        Add Transaction
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <!-- DELETE MODAL -->
+
+    <div
+        class="delete-modal"
+        id="deleteModal"
+        aria-hidden="true">
+
+        <div class="delete-modal-content">
+
+            <div class="delete-modal-icon">
+                🗑️
+            </div>
+
+            <h2>Delete Transaction?</h2>
+
+            <p>
+                Are you sure you want to delete
+                <strong id="deleteTransactionTitle">
+                    this transaction
+                </strong>?
+            </p>
+
+            <p class="delete-warning">
+                This action cannot be undone.
+            </p>
+
+            <div class="delete-modal-actions">
+
+                <button
+                    type="button"
+                    class="delete-cancel-button"
+                    id="deleteCancelButton">
+                    Cancel
+                </button>
+
+                <button
+                    type="button"
+                    class="delete-confirm-button"
+                    id="deleteConfirmButton">
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- JAVASCRIPT -->
+
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard-auth.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/profile.js"></script>
+
+</body>
+
+</html>

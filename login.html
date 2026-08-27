@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Login - Expense Tracker</title>
+
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/auth.css">
+<link rel="stylesheet" href="css/logo.css">
+
+</head>
+
+<body>
+
+    <main class="auth-page">
+
+        <div class="auth-card">
+
+            <!-- LOGO -->
+
+<a href="index.html" class="brand-logo">
+
+    <div class="brand-logo-icon">
+
+        <div class="logo-coins"></div>
+
+        <div class="logo-bars">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <div class="logo-growth"></div>
+
+        <div class="logo-calculator"></div>
+
+    </div>
+
+    <div class="brand-logo-text">
+
+        <span class="brand-logo-title">
+            Expense Tracker
+        </span>
+
+        <span class="brand-logo-subtitle">
+            Manage Your Finances with Ease
+        </span>
+
+    </div>
+
+</a>
+
+            <!-- HEADER -->
+
+            <div class="auth-header">
+
+                <p class="modal-label">
+                    ACCOUNT
+                </p>
+
+                <h2 id="authPageTitle">
+                    Welcome Back
+                </h2>
+
+                <p id="authPageDescription">
+                    Login to manage your personal finances.
+                </p>
+
+            </div>
+
+            <!-- FORM -->
+
+            <form id="authForm">
+
+                <!-- NAME -->
+
+                <div
+    class="form-group"
+    id="authNameGroup">
+
+                    <label for="authName">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="authName"
+                        placeholder="Enter your full name"
+                        maxlength="50"
+                        autocomplete="name">
+
+                </div>
+
+                <!-- EMAIL -->
+
+                <div class="form-group">
+
+                    <label for="authEmail">
+                        Email
+                    </label>
+
+                    <input
+                        type="email"
+                        id="authEmail"
+                        placeholder="Enter your email"
+                        autocomplete="email"
+                        required>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="form-group">
+
+                    <label for="authPassword">
+                        Password
+                    </label>
+
+                    <input
+                        type="password"
+                        id="authPassword"
+                        placeholder="Enter your password"
+                        minlength="6"
+                        autocomplete="current-password"
+                        required>
+
+                </div>
+
+                <!-- SUBMIT -->
+
+                <button
+                    type="submit"
+                    class="save-button auth-submit-button"
+                    id="authSubmitButton">
+
+                    Login
+
+                </button>
+
+            </form>
+
+            <!-- SWITCH -->
+
+            <div class="auth-switch">
+
+                <span id="authSwitchText">
+                    Don't have an account?
+                </span>
+
+                <button
+                    type="button"
+                    id="authSwitchButton">
+
+                    Create Account
+
+                </button>
+
+            </div>
+
+            <!-- BACK -->
+
+            <a
+                href="index.html"
+                class="auth-back-link">
+
+                ← Back to Dashboard
+
+            </a>
+
+        </div>
+
+    </main>
+
+    <script src="js/auth.js"></script>
+
+    <script src="js/login.js"></script>
+
+</body>
+
+</html>
